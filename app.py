@@ -42,9 +42,7 @@ st.markdown("""
 @st.cache_resource
 def load_model():
     try:
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        model_path = os.path.join(script_dir, 'loan_model.pkl')
-        model = joblib.load(model_path)
+        model = joblib.load('loan_model.pkl')
         return model
     except Exception as e:
         return None
