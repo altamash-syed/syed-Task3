@@ -42,10 +42,10 @@ st.markdown("""
 @st.cache_resource
 def load_model():
     try:
-        model = joblib.load('loan_model.pkl')
+        model = joblib.load("loan_model.pkl")
         return model
     except Exception as e:
-        return None
+        print("fail to load model")
 
 model = load_model()
 
