@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import os
 import joblib
 
 
@@ -219,7 +218,7 @@ if submitted:
             
             col_res1, col_res2 = st.columns(2)
             with col_res1:
-                if prediction[0] == 1 or str(prediction[0]).lower() in ['bad', 'default', 'high risk']:
+                if prediction[0] == 1 :
                     st.error("⚠️️ **High Risk Loan / Likely to Default**")
                 else:
                     st.success("✅ **Low Risk Loan / Good Standing Candidate**")
