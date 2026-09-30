@@ -4,7 +4,6 @@ import numpy as np
 import joblib
 
 
-
 # Set page configuration
 st.set_page_config(
     page_title="Loan Default Prediction App",
@@ -42,7 +41,6 @@ st.markdown("""
 @st.cache_resource
 def load_model():
     try:
-        # Expecting a saved model file in the working directory
         model = joblib.load('loan_model.pkl')
         return model
     except Exception as e:
