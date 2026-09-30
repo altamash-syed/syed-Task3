@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import os
 import joblib
 
 
@@ -41,7 +42,9 @@ st.markdown("""
 @st.cache_resource
 def load_model():
     try:
-        model = joblib.load('loan_model.pkl')
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(script_dir, 'loan_model.pkl')
+        model = joblib.load(model_path)
         return model
     except Exception as e:
         return None
